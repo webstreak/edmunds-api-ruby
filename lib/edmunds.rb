@@ -1,0 +1,11 @@
+require 'json'
+require 'http'
+require 'configurations'
+
+require 'edmunds/version'
+require 'edmunds/configuration'
+require 'edmunds/request'
+require 'edmunds/api'
+require 'edmunds/vehicle'
+require 'edmunds/vehicle/makes'
+require 'edmunds/vehicle/models'
