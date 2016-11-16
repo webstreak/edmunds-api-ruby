@@ -1,4 +1,4 @@
-RSpec.shared_examples 'make request to api' do |api_path_regex, method, method_params|
+RSpec.shared_examples 'make request to api' do |api_path_regex, method, *method_params|
 
   let(:body) { JSON.generate({response: ''}) }
 
@@ -8,7 +8,7 @@ RSpec.shared_examples 'make request to api' do |api_path_regex, method, method_p
 
   it 'basic request' do
     if method_params
-      api.send method, method_params
+      api.send method, *method_params
     else
       api.send method
     end
