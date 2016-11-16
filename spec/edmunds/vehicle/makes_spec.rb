@@ -5,20 +5,15 @@ RSpec.describe Edmunds::Vehicle::Makes do
   let!(:api) { Edmunds::Api.new.vehicles.makes }
 
   context '#count' do
-    before do
-      body = JSON.generate({makes: 1})
-      stub_request(:get, /.*\/vehicle.+\/makes\/count.*/).to_return(status: 200, body: body)
-    end
+    include_examples 'make request to api', /.*\/vehicle.+\/makes\/count.*/, :count
+  end
 
-    it 'no parameters' do
-      api.count
-      expect(WebMock).to have_requested(:get, /.*\/vehicle.+\/makes\/count.*/).once
-    end
+  context '#all_makes' do
+    include_examples 'make request to api', /.*\/vehicle.+\/makes\?.*/, :all_makes
+  end
 
-    it '#count accept parameters' do
-      api.count(view: 'full')
-      expect(WebMock).to have_requested(:get, /.*\/vehicle.+\/makes\/count.*/).with(query: hash_including({view: 'full'}))
-    end
+  context '#make' do
+    include_examples 'make request to api', /.*\/vehicle.+\/mazda\?.*/, :make, 'mazda'
   end
 
 end

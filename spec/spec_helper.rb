@@ -9,3 +9,6 @@ end
 # disable all remote connections
 require 'webmock/rspec'
 WebMock.disable_net_connect!(allow_localhost: true)
+
+# load shared examples
+Dir["./spec/shared_examples/**/*.rb"].each { |f| require f }

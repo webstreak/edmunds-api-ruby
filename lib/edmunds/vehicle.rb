@@ -2,7 +2,7 @@ module Edmunds
   class Api
 
     def makes
-      self.extend(Edmunds::Vehicle::Makes)
+      self.extend Edmunds::Vehicle::Makes
     end
 
     def models
