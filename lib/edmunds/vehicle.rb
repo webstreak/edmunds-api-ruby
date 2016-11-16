@@ -9,5 +9,9 @@ module Edmunds
       self.extend Edmunds::Vehicle::Models
     end
 
+    def vin
+      self.extend Edmunds::Vehicle::Vin
+    end
+
   end
 end
