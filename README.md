@@ -17,8 +17,12 @@ Or install it yourself as:
     $ gem install edmunds-api-ruby
 
 ## Usage
+Add api_key in initializer:
 
 ```ruby
+  Edmunds.configure do |config|
+    config.api_key = 'your api key'
+  end
 ```
 
 ## Development
