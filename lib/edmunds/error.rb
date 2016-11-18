@@ -24,8 +24,8 @@ module Edmunds
 
     def self.from_response(code, body)
       message = "http code: #{code}. "
-      if body['error']
-        message << "Http message: #{body['error']}"
+      if body['message']
+        message << "Http message: #{body['message']}"
       else
         message = 'No message in http body'
       end
