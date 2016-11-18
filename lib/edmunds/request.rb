@@ -4,15 +4,42 @@ module Edmunds
     API_URL = 'https://api.edmunds.com/api'
 
     def api_call(path, params={})
-      params = {
+      request_params = merge_required_params params
+      response = HTTP.headers(http_headers).get(API_URL+path, params: request_params)
+      parse_response response
+    end
+
+    def merge_required_params(params)
+      {
         api_key: Edmunds.configuration.api_key,
         fmt: Edmunds.configuration.request_params.fmt
       }.merge(params)
-      response = HTTP.headers({
+    end
+
+    def http_headers
+      {
         'User-Agent' => 'EdmundsApi ruby client',
         'Accept' => 'application/json'
-      }).get(API_URL+path, params: params)
-      JSON.parse response.body
+      }
+    end
+
+    def parse_response(response)
+      begin
+        body = JSON.parse response.body
+      rescue
+        body = {}
+      end
+
+      if response.code == 200
+        body
+      else
+        raise_error response.code, body
+      end
+    end
+
+    def raise_error(code, body)
+      klass = Edmunds::Error::ERRORS[code]
+      raise klass.from_response code, body
     end
 
   end

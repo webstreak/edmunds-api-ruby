@@ -36,4 +36,10 @@ RSpec.describe Edmunds::Request do
     expect(hash.values).to include 'value'
   end
 
+  it 'raises error if code is not 200' do
+    body = JSON.generate({error: 'error message'})
+    stub_request(:get, /.*\/api.edmunds.com.*/).to_return(status: 404, body: body)
+    expect { Api.new.perform }.to raise_error(Edmunds::Error::NotFound)
+  end
+
 end
