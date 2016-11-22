@@ -13,5 +13,9 @@ module Edmunds
       self.extend Edmunds::Vehicle::Vin
     end
 
+    def styles
+      self.extend Edmunds::Vehicle::Styles
+    end
+
   end
 end
