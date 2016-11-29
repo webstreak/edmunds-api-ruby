@@ -24,6 +24,17 @@ Add api_key in initializer:
     config.api_key = 'your api key'
   end
 ```
+Basic usage:
+```ruby
+vehicle_api = Edmunds::Api.new.vehicle
+vehicle_api.makes.count
+```
+Pass options into initializer:
+```ruby
+vehicle_api = Edmunds::Api.new({view: 'full', api_key: 'other_key'}).vehicle
+vehicle_api.makes.count
+```
+
 
 ## Development
 

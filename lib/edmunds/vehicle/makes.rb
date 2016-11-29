@@ -2,16 +2,16 @@ module Edmunds
   module Vehicle
     module Makes
 
-      def count(params={})
-        api_call '/vehicle/v2/makes/count', params
+      def count
+        api_call '/vehicle/v2/makes/count'
       end
 
-      def all_makes(params={})
-        api_call '/vehicle/v2/makes', params
+      def all_makes
+        api_call '/vehicle/v2/makes'
       end
 
-      def make(make, params={})
-        api_call "/vehicle/v2/#{make}", params
+      def make(make)
+        api_call "/vehicle/v2/#{make}"
       end
 
     end
