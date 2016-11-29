@@ -3,7 +3,7 @@ module Edmunds
     module Vin
 
       def decode(vin)
-        api_call "/vehicle/v2/vins/#{vin}"
+        send_request "/vins/#{vin}"
       end
 
     end

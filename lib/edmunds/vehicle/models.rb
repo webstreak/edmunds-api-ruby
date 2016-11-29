@@ -3,15 +3,15 @@ module Edmunds
     module Models
 
       def count(make)
-        api_call "/vehicle/v2/#{make}/models/count"
+        send_request "/#{make}/models/count"
       end
 
       def models(make)
-        api_call "/vehicle/v2/#{make}/models"
+        send_request "/#{make}/models"
       end
 
       def model(make, model)
-        api_call "/vehicle/v2/#{make}/#{model}"
+        send_request "/#{make}/#{model}"
       end
 
     end

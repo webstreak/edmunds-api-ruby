@@ -1,6 +1,12 @@
 module Edmunds
-  class Api
 
+  module Vehicle
+    def send_request(path)
+      api_call 'vehicle', path
+    end
+  end
+
+  class Api
     def makes
       self.extend Edmunds::Vehicle::Makes
     end
@@ -16,6 +22,6 @@ module Edmunds
     def styles
       self.extend Edmunds::Vehicle::Styles
     end
-
   end
+
 end

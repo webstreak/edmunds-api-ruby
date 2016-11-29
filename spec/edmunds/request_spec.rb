@@ -6,7 +6,7 @@ RSpec.describe Edmunds::Request do
   module Edmunds
     class Api
       def perform
-        api_call '/path'
+        api_call 'vehicle', '/path'
       end
     end
   end

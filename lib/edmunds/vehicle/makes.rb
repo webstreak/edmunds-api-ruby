@@ -3,15 +3,15 @@ module Edmunds
     module Makes
 
       def count
-        api_call '/vehicle/v2/makes/count'
+        send_request '/makes/count'
       end
 
       def all_makes
-        api_call '/vehicle/v2/makes'
+        send_request '/makes'
       end
 
       def make(make)
-        api_call "/vehicle/v2/#{make}"
+        send_request "/#{make}"
       end
 
     end

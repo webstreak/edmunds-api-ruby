@@ -3,10 +3,16 @@ module Edmunds
 
     API_URL = 'https://api.edmunds.com/api'
 
-    def api_call(path)
+    def api_call(api_path, path)
+      url = build_api_url api_path, path
       request_params = merge_required_params
-      response = HTTP.headers(http_headers).get(API_URL+path, params: request_params)
+      response = HTTP.headers(http_headers).get(url, params: request_params)
       parse_response response
+    end
+
+    def build_api_url(api_path, path)
+      api_version = Edmunds.configuration.api_version || 'v2'
+      API_URL + '/' + api_path + '/' + api_version + path
     end
 
     def merge_required_params
