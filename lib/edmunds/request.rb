@@ -11,7 +11,7 @@ module Edmunds
     end
 
     def build_api_url(api_path, path)
-      api_version = Edmunds.configuration.api_version || 'v2'
+      api_version = 'v' + Edmunds.configuration.api_version.to_s
       API_URL + '/' + api_path + '/' + api_version + path
     end
 

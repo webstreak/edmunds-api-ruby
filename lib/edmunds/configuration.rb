@@ -8,6 +8,7 @@ module Edmunds
 
   configuration_defaults do |c|
     c.request_params.fmt = 'json'
+    c.api_version = 2
   end
 
 end
