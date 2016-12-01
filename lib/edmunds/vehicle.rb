@@ -26,6 +26,10 @@ module Edmunds
     def engines
       self.extend Edmunds::Vehicle::Engines
     end
+
+    def transmissions
+      self.extend Edmunds::Vehicle::Transmissions
+    end
   end
 
 end
