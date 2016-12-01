@@ -50,6 +50,10 @@ module Edmunds
     def safety
       self.extend Edmunds::Vehicle::Safety
     end
+
+    def grades
+      self.extend Edmunds::Vehicle::Grades
+    end
   end
 
 end
