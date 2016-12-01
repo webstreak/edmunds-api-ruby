@@ -38,6 +38,10 @@ module Edmunds
     def options
       self.extend Edmunds::Vehicle::Options
     end
+
+    def equipment
+      self.extend Edmunds::Vehicle::Equipment
+    end
   end
 
 end
