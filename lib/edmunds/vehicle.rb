@@ -42,6 +42,10 @@ module Edmunds
     def equipment
       self.extend Edmunds::Vehicle::Equipment
     end
+
+    def squishvins
+      self.extend Edmunds::Vehicle::Squishvins
+    end
   end
 
 end
