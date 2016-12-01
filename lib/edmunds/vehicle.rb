@@ -46,6 +46,10 @@ module Edmunds
     def squishvins
       self.extend Edmunds::Vehicle::Squishvins
     end
+
+    def safety
+      self.extend Edmunds::Vehicle::Safety
+    end
   end
 
 end
