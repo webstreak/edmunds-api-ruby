@@ -22,6 +22,10 @@ module Edmunds
     def styles
       self.extend Edmunds::Vehicle::Styles
     end
+
+    def engines
+      self.extend Edmunds::Vehicle::Engines
+    end
   end
 
 end
