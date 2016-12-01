@@ -34,6 +34,10 @@ module Edmunds
     def colors
       self.extend Edmunds::Vehicle::Colors
     end
+
+    def options
+      self.extend Edmunds::Vehicle::Options
+    end
   end
 
 end
