@@ -3,9 +3,9 @@ module Edmunds
 
     API_URL = 'https://api.edmunds.com/api'
 
-    def api_call(api_path, path)
+    def api_call(api_path, path, options={})
       url = build_api_url api_path, path
-      request_params = merge_required_params
+      request_params = merge_required_params options
       response = HTTP.headers(http_headers).get(url, params: request_params)
       parse_response response
     end
@@ -15,16 +15,15 @@ module Edmunds
       API_URL + '/' + api_path + '/' + api_version + path
     end
 
-    def merge_required_params
+    def merge_required_params(options)
       params = {
         api_key: Edmunds.configuration.api_key,
         fmt: Edmunds.configuration.request_params.fmt
       }
       if @request_user_params
-        params.merge(@request_user_params)
-      else
-        params
+        params = params.merge(@request_user_params)
       end
+      params.merge(options)
     end
 
     def http_headers

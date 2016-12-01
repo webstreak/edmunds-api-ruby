@@ -11,5 +11,9 @@ module Edmunds
       self.extend Edmunds::Vehicle
     end
 
+    def media
+      self.extend Edmunds::Media
+    end
+
   end
 end
