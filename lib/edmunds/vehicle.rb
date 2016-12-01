@@ -30,6 +30,10 @@ module Edmunds
     def transmissions
       self.extend Edmunds::Vehicle::Transmissions
     end
+
+    def colors
+      self.extend Edmunds::Vehicle::Colors
+    end
   end
 
 end
