@@ -1,8 +1,8 @@
 module Edmunds
 
   module Vehicle
-    def send_request(path)
-      api_call 'vehicle', path
+    def send_request(path, options={})
+      api_call 'vehicle', path, options
     end
   end
 

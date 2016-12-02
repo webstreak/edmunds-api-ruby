@@ -6,8 +6,8 @@ module Edmunds
         send_request "/engines/#{engine_id}"
       end
 
-      def by_style_id(style_id)
-        send_request "/styles/#{style_id}/engines"
+      def by_style_id(style_id, options={})
+        send_request "/styles/#{style_id}/engines", options
       end
 
     end

@@ -2,8 +2,8 @@ module Edmunds
   module Vehicle
     module Vin
 
-      def decode(vin)
-        send_request "/vins/#{vin}"
+      def decode(vin, options={})
+        send_request "/vins/#{vin}", options
       end
 
     end

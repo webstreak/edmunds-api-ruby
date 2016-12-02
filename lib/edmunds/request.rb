@@ -16,14 +16,10 @@ module Edmunds
     end
 
     def merge_required_params(options)
-      params = {
+      {
         api_key: Edmunds.configuration.api_key,
         fmt: Edmunds.configuration.request_params.fmt
-      }
-      if @request_user_params
-        params = params.merge(@request_user_params)
-      end
-      params.merge(options)
+      }.merge(options)
     end
 
     def http_headers

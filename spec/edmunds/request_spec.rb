@@ -5,8 +5,8 @@ RSpec.describe Edmunds::Request do
 
   module Edmunds
     class Api
-      def perform
-        api_call 'vehicle', '/path'
+      def perform(options={})
+        api_call 'vehicle', '/path', options
       end
     end
   end
@@ -24,8 +24,8 @@ RSpec.describe Edmunds::Request do
     })
   end
 
-  it 'adds required parameters' do
-    Edmunds::Api.new(view: 'full').perform
+  it 'adds extra parameters' do
+    Edmunds::Api.new.perform({view: 'full'})
     expect(WebMock).to have_requested(:get, /.*\/api.edmunds.com.*/).with(query: {
       fmt: 'json',
       api_key: 'test',
