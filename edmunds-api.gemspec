@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'edmunds-api'
   spec.version       = Edmunds::VERSION
   spec.authors       = ['Alexander Belyaev']
-  spec.email         = ['alexbel@hush.com']
+  spec.email         = ['alex@webstreak.com']
 
   spec.summary       = 'Edmunds Api ruby client'
   spec.description   = ''
