@@ -7,7 +7,7 @@ Edmunds Api ruby client.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'edmunds-api-ruby', '~> 0.0.1'
+gem 'edmunds-api-ruby', '~> 0.1.0'
 ```
 
 And then execute:
@@ -31,7 +31,7 @@ Basic usage:
 vehicle_api = Edmunds::Api.new.vehicle
 vehicle_api.makes.count
 ```
-Pass options:
+You can also pass options to an Api endpoint:
 ```ruby
 vehicle_api = Edmunds::Api.new.vehicle
 vehicle_api.make('Lexus', {state: 'new'})
