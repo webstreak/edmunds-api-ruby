@@ -4,7 +4,7 @@ $:.unshift lib unless $:.include?(lib)
 require 'edmunds/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'edmunds-api'
+  spec.name          = 'edmunds_api'
   spec.version       = Edmunds::VERSION
   spec.authors       = ['Alexander Belyaev']
   spec.email         = ['alex@webstreak.com']
