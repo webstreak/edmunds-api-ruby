@@ -7,7 +7,7 @@ Edmunds Api ruby client.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'edmunds-api-ruby', '~> 0.1.0'
+gem 'edmunds_api', '~> 0.1.0'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install edmunds-api-ruby
+    $ gem install edmunds_api
 
 ## Usage
 Add api_key in initializer:
