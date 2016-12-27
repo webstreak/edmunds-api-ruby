@@ -28,13 +28,13 @@ Add api_key in initializer:
 ```
 Basic usage:
 ```ruby
-vehicle_api = Edmunds::Api.new.vehicles
-vehicle_api.makes.count
+vehicles_api = Edmunds::Api.new.vehicles
+vehicles_api.makes.count
 ```
 You can also pass options to an Api endpoint:
 ```ruby
-vehicle_api = Edmunds::Api.new.vehicle
-vehicle_api.make('Lexus', {state: 'new'})
+vehicles_api = Edmunds::Api.new.vehicles
+vehicles_api.make('Lexus', {state: 'new'})
 ```
 
 ## Contributing
