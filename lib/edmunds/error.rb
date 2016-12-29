@@ -9,6 +9,7 @@ module Edmunds
     BadGateway = Class.new self
     ServiceUnavailable = Class.new self
     GatewayTimeout = Class.new self
+    Unknown = Class.new self
 
     ERRORS = {
       400 => Edmunds::Error::BadRequest,
@@ -23,11 +24,11 @@ module Edmunds
 
 
     def self.from_response(code, body)
-      message = "http code: #{code}. "
+      message = "\nHTTP response code: #{code}. "
       if body['message']
-        message << "Http message: #{body['message']}"
+        message << "HTTP message: #{body['message']}"
       else
-        message = 'No message in http body'
+        message << "No message in http body.\nHTTP body: #{body}"
       end
       new message
     end

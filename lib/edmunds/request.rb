@@ -45,6 +45,9 @@ module Edmunds
 
     def raise_error(code, body)
       klass = Edmunds::Error::ERRORS[code]
+      if klass.nil?
+        klass = Edmunds::Error::Unknown
+      end
       raise klass.from_response code, body
     end
 
