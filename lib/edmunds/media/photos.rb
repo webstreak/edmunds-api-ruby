@@ -2,7 +2,7 @@ module Edmunds
   module Media
     module Photos
 
-      def by_year_make_model(year, make, model)
+      def by_year_make_model(year, make, model, options={})
         send_request "/#{make}/#{model}/#{year}/photos"
       end
 

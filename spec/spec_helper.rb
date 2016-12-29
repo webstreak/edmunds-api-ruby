@@ -1,9 +1,9 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'edmunds'
+require 'edmunds_api'
 
 # add api_key
 Edmunds.configure do |c|
-  c.api_key = 'test'
+  c.api_key = 'api_key'
 end
 
 # disable all remote connections

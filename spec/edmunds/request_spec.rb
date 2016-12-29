@@ -11,6 +11,8 @@ RSpec.describe Edmunds::Request do
     end
   end
 
+  let(:api_key) { Edmunds.configuration.api_key }
+
   before do
     body = JSON.generate({key: 'value'})
     stub_request(:get, /.*\/api.edmunds.com.*/).to_return(status: 200, body: body)
@@ -28,7 +30,7 @@ RSpec.describe Edmunds::Request do
     Edmunds::Api.new.perform({view: 'full'})
     expect(WebMock).to have_requested(:get, /.*\/api.edmunds.com.*/).with(query: {
       fmt: 'json',
-      api_key: 'test',
+      api_key: api_key,
       view: 'full'
     })
   end
@@ -37,7 +39,7 @@ RSpec.describe Edmunds::Request do
     Edmunds::Api.new.perform
     expect(WebMock).to have_requested(:get, /.*\/api.edmunds.com.*/).with(query: {
       fmt: 'json',
-      api_key: 'test'
+      api_key: api_key
     })
   end
 
