@@ -3,7 +3,7 @@ module Edmunds
     module Photos
 
       def by_year_make_model(year, make, model, options={})
-        send_request "/#{make}/#{model}/#{year}/photos"
+        send_request "/#{make}/#{model}/#{year}/photos", options
       end
 
       def by_tag(tag, options={})
