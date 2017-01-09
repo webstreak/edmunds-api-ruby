@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/webstreak/edmunds-api-ruby.svg?style=shield)](https://circleci.com/gh/webstreak/edmunds-api-ruby)
+
 Edmunds Api ruby client.
 
 > *Status*: Beta. We are preparing the project for public release soon
