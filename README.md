@@ -1,5 +1,6 @@
 [![Circle CI](https://circleci.com/gh/webstreak/edmunds-api-ruby.svg?style=shield)](https://circleci.com/gh/webstreak/edmunds-api-ruby)
 [![Code Climate](https://codeclimate.com/github/webstreak/edmunds-api-ruby/badges/gpa.svg)](https://codeclimate.com/github/webstreak/edmunds-api-ruby)
+[![Coverage Status](https://coveralls.io/repos/github/webstreak/edmunds-api-ruby/badge.svg)](https://coveralls.io/github/webstreak/edmunds-api-ruby)
 
 Edmunds Api ruby client.
 

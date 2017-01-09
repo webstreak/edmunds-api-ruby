@@ -1,6 +1,9 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'simplecov'
+require 'coveralls'
 require 'edmunds_api'
+
+SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
 
 # add api_key
 Edmunds.configure do |c|

@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in edmunds_api.gemspec
+group :test do
+  gem 'coveralls'
+  gem 'simplecov'
+end
+
 gemspec
