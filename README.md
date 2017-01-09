@@ -36,6 +36,7 @@ You can also pass options to an Api endpoint:
 vehicles_api = Edmunds::Api.new.vehicles
 vehicles_api.make('Lexus', {state: 'new'})
 ```
+See supported options for each Api endpoint on [Edmunds website](http://developer.edmunds.com/api-documentation/overview/)  
 
 ## Supported endpoints
 [Endpoints](endpoints.md)
