@@ -37,6 +37,9 @@ vehicles_api = Edmunds::Api.new.vehicles
 vehicles_api.make('Lexus', {state: 'new'})
 ```
 
+## Supported endpoints
+[Endpoints](endpoints.md)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/webstreak/edmunds-api-ruby.
