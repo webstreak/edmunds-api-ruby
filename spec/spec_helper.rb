@@ -1,9 +1,10 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'simplecov'
 require 'coveralls'
-require 'edmunds_api'
 
 SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
+
+require 'edmunds_api'
 
 # add api_key
 Edmunds.configure do |c|
@@ -12,7 +13,7 @@ end
 
 # disable all remote connections
 require 'webmock/rspec'
-WebMock.disable_net_connect!(allow_localhost: true)
+WebMock.disable_net_connect!(allow: 'coveralls.io')
 
 # load shared examples
 Dir["./spec/shared_examples/**/*.rb"].each { |f| require f }
