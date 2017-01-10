@@ -2,6 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/webstreak/edmunds-api-ruby/badges/gpa.svg)](https://codeclimate.com/github/webstreak/edmunds-api-ruby)
 [![Coverage Status](https://coveralls.io/repos/github/webstreak/edmunds-api-ruby/badge.svg)](https://coveralls.io/github/webstreak/edmunds-api-ruby)
 [![Gem Version](https://badge.fury.io/rb/edmunds_api.svg)](https://badge.fury.io/rb/edmunds_api)
+[![RubyGems](http://img.shields.io/gem/dt/edmunds_api.svg?style=flat)](http://rubygems.org/gems/edmunds_api)
 
 Edmunds Api ruby client.
 
