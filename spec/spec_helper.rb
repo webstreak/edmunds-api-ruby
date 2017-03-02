@@ -7,8 +7,8 @@ SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCo
 require 'edmunds_api'
 
 # add api_key
-Edmunds.configure do |c|
-  c.api_key = 'api_key'
+Edmunds.configure do |config|
+  config.api_key = 'api_key'
 end
 
 # disable all remote connections

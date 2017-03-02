@@ -55,4 +55,10 @@ RSpec.describe Edmunds::Request do
     expect { Edmunds::Api.new.perform }.to raise_error(Edmunds::Error::NotFound)
   end
 
+  it 'raises error if no api_key' do
+    Edmunds.configure { |config| config.api_key = [nil, '', ' '].sample }
+    expect { Edmunds::Api.new.perform }.to raise_error('No api_key found')
+    Edmunds.configure { |config| config.api_key = 'api_key' }
+  end
+
 end
