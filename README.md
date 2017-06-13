@@ -13,7 +13,7 @@ Edmunds Api ruby client.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'edmunds_api', '~> 0.1.4'
+gem 'edmunds_api', '~> 0.1.5'
 ```
 
 And then execute:
@@ -30,6 +30,7 @@ Add api_key in initializer:
 ```ruby
   Edmunds.configure do |config|
     config.api_key = 'your-api-key'
+    config.timeout = 5
   end
 ```
 Basic usage:

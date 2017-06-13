@@ -3,12 +3,13 @@ module Edmunds
 
     API_URL = 'https://api.edmunds.com/api'
     API_VERSION = Edmunds.configuration.api_version.to_s
+    DEFAULT_TIMEOUT = 15
 
     def api_call(api_path, path, options={})
       url = build_api_url api_path, path
       request_params = merge_required_params options
       raise 'No api_key found' if request_params[:api_key].empty?
-      response = HTTP.headers(http_headers).get(url, params: request_params)
+      response = HTTP.timeout(*timeout).headers(http_headers).get(url, params: request_params)
       parse_response response
     end
 
@@ -31,6 +32,11 @@ module Edmunds
         'User-Agent' => 'EdmundsApi ruby client',
         'Accept' => 'application/json'
       }
+    end
+
+    def timeout
+      timeout = Edmunds.configuration.timeout || DEFAULT_TIMEOUT
+      [:global, connect: timeout]
     end
 
     def parse_response(response)
