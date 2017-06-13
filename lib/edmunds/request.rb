@@ -1,3 +1,5 @@
+require 'timeout'
+
 module Edmunds
   module Request
 
@@ -9,7 +11,9 @@ module Edmunds
       url = build_api_url api_path, path
       request_params = merge_required_params options
       raise 'No api_key found' if request_params[:api_key].empty?
-      response = HTTP.timeout(*timeout).headers(http_headers).get(url, params: request_params)
+      response = Timeout::timeout(timeout) {
+        HTTP.headers(http_headers).get(url, params: request_params)
+      }
       parse_response response
     end
 
@@ -35,8 +39,7 @@ module Edmunds
     end
 
     def timeout
-      timeout = Edmunds.configuration.timeout || DEFAULT_TIMEOUT
-      [:global, connect: timeout]
+      Edmunds.configuration.timeout || DEFAULT_TIMEOUT
     end
 
     def parse_response(response)

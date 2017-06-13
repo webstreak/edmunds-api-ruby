@@ -13,7 +13,7 @@ Edmunds Api ruby client.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'edmunds_api', '~> 0.1.5'
+gem 'edmunds_api', '~> 0.1.6'
 ```
 
 And then execute:
