@@ -6,7 +6,7 @@ module Edmunds
         send_request "/#{make}/models/count", options
       end
 
-      def models(make, options={})
+      def all_models(make, options={})
         send_request "/#{make}/models", options
       end
 

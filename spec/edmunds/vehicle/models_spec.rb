@@ -8,8 +8,8 @@ RSpec.describe Edmunds::Vehicle::Models do
     include_examples 'make request to api', /.*\/vehicle.+\/models\/count.*/, :count, 'ford'
   end
 
-  context '#models' do
-    include_examples 'make request to api', /.*\/vehicle.+\/models\?.*/, :models, 'ford'
+  context '#all_models' do
+    include_examples 'make request to api', /.*\/vehicle.+\/models\?.*/, :all_models, 'ford'
   end
 
   context '#model' do
