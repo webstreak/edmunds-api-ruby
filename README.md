@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/webstreak/edmunds-api-ruby.svg?style=shield)](https://circleci.com/gh/webstreak/edmunds-api-ruby)
+![Tests](https://github.com/webstreak/edmunds-api-ruby/actions/workflows/ci.yml/badge.svg)
 [![Code Climate](https://codeclimate.com/github/webstreak/edmunds-api-ruby/badges/gpa.svg)](https://codeclimate.com/github/webstreak/edmunds-api-ruby)
 [![Coverage Status](https://coveralls.io/repos/github/webstreak/edmunds-api-ruby/badge.svg)](https://coveralls.io/github/webstreak/edmunds-api-ruby)
 [![Gem Version](https://badge.fury.io/rb/edmunds_api.svg)](https://badge.fury.io/rb/edmunds_api)
@@ -13,7 +13,7 @@ Edmunds Api ruby client.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'edmunds_api', '~> 0.1.6'
+gem 'edmunds_api', '~> 0.1.8'
 ```
 
 And then execute:
